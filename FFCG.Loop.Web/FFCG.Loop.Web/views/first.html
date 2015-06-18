@@ -1,0 +1,200 @@
+<div class="row">
+    <div class="col-sm-3 ">
+        <div ng-show="selected">
+            <h4>Event Details</h4>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Title:</label>
+                </div>
+                <div class="col-sm-8">
+                    <span>SOA Masterclass</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Date:</label>
+                </div>
+                <div class="col-sm-8">
+                    <span>2015-07-07</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Time:</label>
+                </div>
+                <div class="col-sm-8">
+                    <span>09:00-17:00</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Place:</label>
+                </div>
+                <div class="col-sm-8">
+                    <span>Sureplan 8 </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Status:</label>
+                </div>
+                <div class="col-sm-8">
+                    <span>Registered</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <label>Topics</label>
+                    <ul>
+                        <li>SOA REST Integration</li>
+                        <li>Biztalk EDI</li>
+                        <li>Microsoft</li>
+                    </ul>
+                    <button class="btn btn-default disabled">Register</button>
+                    <button class="btn btn-default">Unregister</button>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h4>Upcoming Events</h4>
+            <div>
+                <ul class="event-ui">
+                    <li>SOA Masterclass <span>27</span></li>
+                    <li>Agile Webinar<span>27</span></li>
+                    <li>Biztalk EDI <span>27</span></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <h4>Last Chance</h4>
+            <div>
+                <ul class="event-ui">
+                    <li>SOA Masterclass <span>27</span></li>
+                    <li>Agile Webinar<span>27</span></li>
+                    <li>Biztalk EDI <span>27</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div>
+            <h4>News</h4>
+            <ul>
+                <li>
+                    This is a new info about SOA.
+                </li>
+                <li>
+
+                    Will have discount tomorrow.
+                </li>
+            </ul>
+        </div>
+        <div class="btn btn-primary col-sm-12 ">Request Event</div>
+
+
+    </div>
+    <div class="col-sm-9">
+
+
+        <div id="calendar">
+
+        </div>
+
+        <div class="row" style=" padding-top:10px">
+            <div class="col-sm-6">
+                <label>Status:</label>
+                <ul class="status-ui">
+                    <li ng-repeat="statu in status track by $index">
+                        <div ng-click="Preliminary=!Preliminary">
+                            {{statu}}
+                        </div>
+                        </
+
+                    </li>
+                    <!--                    <li ng-click="Preliminary=!Preliminary" ng-class="{'status-check':Preliminary}">-->
+                    <!--                        <div>-->
+                    <!---->
+                    <!--                            Preliminary-->
+                    <!---->
+                    <!--                        </div>-->
+                    <!--                    </li>-->
+                    <!--                    <li >-->
+                    <!--                        <div>-->
+                    <!---->
+                    <!--                            Applied-->
+                    <!---->
+                    <!--                        </div>-->
+                    <!--                    </li>-->
+                    <!--                    <li>-->
+                    <!--                        <div>-->
+                    <!---->
+                    <!--                            Preliminary-->
+                    <!---->
+                    <!--                        </div>-->
+                    <!--                    </li>-->
+                    <!--                    <li>-->
+                    <!--                        <div>-->
+                    <!---->
+                    <!--                            Planned-->
+                    <!---->
+                    <!--                        </div>-->
+                    <!--                    </li>-->
+                    <!--                    <li>-->
+                    <!--                        <div>-->
+                    <!---->
+                    <!--                            Registered-->
+                    <!---->
+                    <!--                        </div>-->
+                    <!--                    </li>-->
+                </ul>
+            </div>
+            <div class="col-sm-6">
+                <div>
+
+                    <label>Topic:</label>
+                    <ul class="topics-ui">
+                        <li>
+                            <div>SOA</div>
+
+                        </li>
+                        <li>
+
+                            <div>BI</div>
+                        </li>
+                        <li>
+
+                            <div>ITIL</div>
+                        </li>
+                        <li>
+
+                            <div>Biztalk</div>
+                        </li>
+                        <li style="background-color:#337ab7;color:white">
+                            <div>Add Topic</div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="row hidden">
+            <div class="col-sm-8">
+                <h4>News</h4>
+                <ul>
+                    <li>
+                        This is a new info about SOA.
+                    </li>
+                    <li>
+
+                        Will have discount tomorrow.
+                    </li>
+                    <li>
+                        This is a new info about SOA.
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4"></div>
+            <div class="btn btn-primary pull-right">Request Event</div>
+        </div>
+
+    </div>
+</div>
