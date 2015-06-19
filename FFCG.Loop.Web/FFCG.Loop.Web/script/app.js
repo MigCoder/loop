@@ -59,6 +59,18 @@ angular.module('loop.controllers').controller("first", ["$scope", function ($sco
         }
         filterEvents();
     };
+    $scope.filterSelectedTopic = [];
+    $scope.filterTopicClick = function (topic) {
+        if ($($scope.filterSelectedTopic).filter(function (index, n) { return n == topic; }).length) {
+            $scope.filterSelectedTopic = $($scope.filterSelectedTopic).filter(function (index, n) { return n != topic; });
+        } else {
+            $scope.filterSelectedTopic.push(topic);
+        }
+        filterEvents();
+    };
+    $scope.isTopicSelectedForFilter=function(topic) {
+        return $($scope.filterSelectedTopic).filter(function (index, n) { return n == topic; }).length;
+    }
     $scope.addCustomerTopic = function () {
         $scope.alreadyExist = false;
         if ($($scope.allTopic).filter(function (index, n) { return n == $scope.customerTopic; }).length) {

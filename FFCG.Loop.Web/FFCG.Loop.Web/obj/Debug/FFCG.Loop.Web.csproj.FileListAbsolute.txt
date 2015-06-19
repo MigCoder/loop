@@ -4,3 +4,9 @@ C:\Users\pangsen\Documents\Visual Studio 2013\Projects\FFCG.Loop.Web\FFCG.Loop.W
 C:\Users\pangsen\Documents\Visual Studio 2013\Projects\FFCG.Loop.Web\FFCG.Loop.Web\obj\Debug\FFCG.Loop.Web.csprojResolveAssemblyReference.cache
 C:\Users\pangsen\Documents\Visual Studio 2013\Projects\FFCG.Loop.Web\FFCG.Loop.Web\obj\Debug\FFCG.Loop.Web.dll
 C:\Users\pangsen\Documents\Visual Studio 2013\Projects\FFCG.Loop.Web\FFCG.Loop.Web\obj\Debug\FFCG.Loop.Web.pdb
+C:\Users\pangsen\Documents\Visual Studio 2013\Projects\loop\FFCG.Loop.Web\FFCG.Loop.Web\bin\FFCG.Loop.Web.dll.config
+C:\Users\pangsen\Documents\Visual Studio 2013\Projects\loop\FFCG.Loop.Web\FFCG.Loop.Web\bin\FFCG.Loop.Web.dll
+C:\Users\pangsen\Documents\Visual Studio 2013\Projects\loop\FFCG.Loop.Web\FFCG.Loop.Web\bin\FFCG.Loop.Web.pdb
+C:\Users\pangsen\Documents\Visual Studio 2013\Projects\loop\FFCG.Loop.Web\FFCG.Loop.Web\obj\Debug\FFCG.Loop.Web.csprojResolveAssemblyReference.cache
+C:\Users\pangsen\Documents\Visual Studio 2013\Projects\loop\FFCG.Loop.Web\FFCG.Loop.Web\obj\Debug\FFCG.Loop.Web.dll
+C:\Users\pangsen\Documents\Visual Studio 2013\Projects\loop\FFCG.Loop.Web\FFCG.Loop.Web\obj\Debug\FFCG.Loop.Web.pdb

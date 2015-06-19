@@ -119,7 +119,7 @@
 
                     <label>Selected Topic:</label>
                     <ul class="topics-ui">
-                        <li ng-repeat="topic in selectedTopic">
+                        <li ng-repeat="topic in selectedTopic" ng-click="filterTopicClick(topic)" ng-class="{'status-check':isTopicSelectedForFilter(topic)}">
                             <div>{{topic}}</div>
                         </li>
                     </ul>
