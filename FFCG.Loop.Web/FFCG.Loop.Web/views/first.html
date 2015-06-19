@@ -1,57 +1,58 @@
 <div class="row">
     <div class="col-sm-3 ">
-        <div ng-show="selected">
+        <div ng-show="selectedEvent">
             <h4>Event Details</h4>
-            <div class="row">
-                <div class="col-sm-4">
-                    <label>Title:</label>
+            <div class="event-detail">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label>Title:</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <span>{{selectedEvent.title}}</span>
+                    </div>
                 </div>
-                <div class="col-sm-8">
-                    <span>SOA Masterclass</span>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label>Date:</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <span>{{selectedEvent.date}}</span>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <label>Date:</label>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label>Time:</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <span>{{selectedEvent.time}}</span>
+                    </div>
                 </div>
-                <div class="col-sm-8">
-                    <span>2015-07-07</span>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label>Place:</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <span>{{selectedEvent.place}}</span>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <label>Time:</label>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label>Status:</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <span>{{selectedEvent.status}}</span>
+                    </div>
                 </div>
-                <div class="col-sm-8">
-                    <span>09:00-17:00</span>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <label>Place:</label>
-                </div>
-                <div class="col-sm-8">
-                    <span>Sureplan 8 </span>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <label>Status:</label>
-                </div>
-                <div class="col-sm-8">
-                    <span>Registered</span>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <label>Topics</label>
-                    <ul>
-                        <li>SOA REST Integration</li>
-                        <li>Biztalk EDI</li>
-                        <li>Microsoft</li>
-                    </ul>
-                    <button class="btn btn-default disabled">Register</button>
-                    <button class="btn btn-default">Unregister</button>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label>Topics</label>
+                        <ul>
+                            <li ng-repeat="topic in selectedEvent.topics">{{topic}}</li>
+
+                        </ul>
+                        <button class="btn btn-default disabled">Register</button>
+                        <button class="btn btn-default">Unregister</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -103,75 +104,31 @@
             <div class="col-sm-6">
                 <label>Status:</label>
                 <ul class="status-ui">
-                    <li ng-repeat="statu in status track by $index">
-                        <div ng-click="Preliminary=!Preliminary">
+                    <li ng-repeat="statu in status track by $index" ng-click="statusClick(statu)" ng-class="{'status-check':isSelected(statu)}">
+                        <div>
                             {{statu}}
                         </div>
                         </
 
                     </li>
-                    <!--                    <li ng-click="Preliminary=!Preliminary" ng-class="{'status-check':Preliminary}">-->
-                    <!--                        <div>-->
-                    <!---->
-                    <!--                            Preliminary-->
-                    <!---->
-                    <!--                        </div>-->
-                    <!--                    </li>-->
-                    <!--                    <li >-->
-                    <!--                        <div>-->
-                    <!---->
-                    <!--                            Applied-->
-                    <!---->
-                    <!--                        </div>-->
-                    <!--                    </li>-->
-                    <!--                    <li>-->
-                    <!--                        <div>-->
-                    <!---->
-                    <!--                            Preliminary-->
-                    <!---->
-                    <!--                        </div>-->
-                    <!--                    </li>-->
-                    <!--                    <li>-->
-                    <!--                        <div>-->
-                    <!---->
-                    <!--                            Planned-->
-                    <!---->
-                    <!--                        </div>-->
-                    <!--                    </li>-->
-                    <!--                    <li>-->
-                    <!--                        <div>-->
-                    <!---->
-                    <!--                            Registered-->
-                    <!---->
-                    <!--                        </div>-->
-                    <!--                    </li>-->
+
                 </ul>
             </div>
             <div class="col-sm-6">
                 <div>
 
-                    <label>Topic:</label>
+                    <label>Selected Topic:</label>
                     <ul class="topics-ui">
-                        <li>
-                            <div>SOA</div>
-
-                        </li>
-                        <li>
-
-                            <div>BI</div>
-                        </li>
-                        <li>
-
-                            <div>ITIL</div>
-                        </li>
-                        <li>
-
-                            <div>Biztalk</div>
-                        </li>
-                        <li style="background-color:#337ab7;color:white">
-                            <div>Add Topic</div>
+                        <li ng-repeat="topic in selectedTopic">
+                            <div>{{topic}}</div>
                         </li>
                     </ul>
+                    <ul class="topics-ui">
+                        <li style="background-color:#337ab7;color:white" ng-click="manageTopic()">
+                            <div>Manage Topic</div>
+                        </li>
+                    </ul>
+
                 </div>
 
             </div>
@@ -196,5 +153,49 @@
             <div class="btn btn-primary pull-right">Request Event</div>
         </div>
 
+    </div>
+</div>
+
+<div class="modal fade" id="manageTopicModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Manage Topic</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="form-group">
+                    <label>
+                        All Topics:
+                    </label>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <ul class="topics-ui">
+                                <li ng-repeat="topic in allTopic" ng-class="{'status-check':isTopicSelected(topic)}" ng-click="topicClick(topic)">
+                                    <div>{{topic}}</div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+        
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" ng-model="customerTopic" />
+                        </div>
+                        <div class="col-sm-4">
+                            <button class="btn btn-default" ng-disabled="customerTopic==undefined || customerTopic===''" ng-click="addCustomerTopic()">Add Customer Topic</button>
+                        </div>
+                    </div>
+                    <span ng-show="alreadyExist" class="text-danger">Already exist.</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
 </div>
